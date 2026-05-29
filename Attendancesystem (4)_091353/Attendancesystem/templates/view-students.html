@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Students - Student Enrollment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Student Enrollment System</h1>
+            <div class="user-info">
+                <span>Welcome, <span id="user-name-display">User</span>!</span>
+                <button type="button" id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>All Student Records</h2>
+            <a href="{{ url_for('dashboard_page') }}" class="btn btn-secondary">← Back to Dashboard</a>
+        </div>
+
+        <div id="error-msg" class="alert alert-error" style="display:none;"></div>
+        <div id="success-msg" class="alert alert-success" style="display:none;"></div>
+
+        <section class="card search-section" style="margin-bottom: 20px;">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by ID, Name, or Email...">
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body"></tbody>
+                </table>
+            </div>
+            <p class="text-center mt-20" style="color: #666;">
+                Showing <strong id="total-students-count">0</strong> student(s) from server
+            </p>
+        </section>
+
+        <section class="card mt-20">
+            <h3>Quick Actions</h3>
+            <div class="action-buttons mt-20">
+                <a href="{{ url_for('add_student_page') }}" class="btn btn-primary text-center">Add New Student</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='api.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

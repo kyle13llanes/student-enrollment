@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Student Enrollment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Student Enrollment</h1>
+            <h2>System</h2>
+            <p class="auth-subtitle">Flask server · access from phone on same Wi-Fi</p>
+
+            <div id="error-msg" class="alert alert-error" style="display:none;"></div>
+
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+
+            <p class="auth-link">Don't have an account? <a href="{{ url_for('signup_page') }}">Sign up here</a></p>
+
+            <div class="demo-credentials">
+                <p><strong>Demo accounts</strong> (database pre-loaded with 12 students):</p>
+                <p>admin / password</p>
+                <p>demo / demo123</p>
+                <p>registrar / registrar1</p>
+                {% if is_online %}
+                <p class="online-badge">You are on the public online server</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='api.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

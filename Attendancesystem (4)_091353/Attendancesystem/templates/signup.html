@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Student Enrollment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Create Account</h1>
+            <h2>Student Enrollment System</h2>
+
+            <div id="error-msg" class="alert alert-error" style="display:none;"></div>
+            <div id="success-msg" class="alert alert-success" style="display:none;"></div>
+
+            <form id="signupForm" class="form">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Choose a username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Create a password (min 6 chars)">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+
+            <p class="auth-link">Already have an account? <a href="{{ url_for('index') }}">Login here</a></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='api.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Render Blueprint — permanent public URL (free)
+# After GitHub push: Render Dashboard → New → Blueprint → select repo → Apply
+
+services:
+  - type: web
+    name: student-enrollment
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: RENDER
+        value: "true"

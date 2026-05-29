@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Enrollment System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Student Enrollment System</h1>
+            <div class="user-info">
+                <span>Welcome, <span id="user-name-display">User</span>!</span>
+                <button id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>Dashboard Overview</h2>
+        </div>
+
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total">0</div>
+                <div class="stat-label">Total Students</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-bsit">0</div>
+                <div class="stat-label">BSIT</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-bsba">0</div>
+                <div class="stat-label">BSBA</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-bshm">0</div>
+                <div class="stat-label">BSHM</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-bstm">0</div>
+                <div class="stat-label">BSTM</div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>Quick Actions</h2>
+            <div class="menu-grid">
+                <a href="add-student.html" class="menu-card">
+                    <div class="menu-icon">📝</div>
+                    <h3>Add Student</h3>
+                    <p>Enroll a new student into the system</p>
+                </a>
+                <a href="view-students.html" class="menu-card">
+                    <div class="menu-icon">📋</div>
+                    <h3>View All</h3>
+                    <p>See complete list of enrolled students</p>
+                </a>
+
+                <a href="#" id="logoutCardBtn" class="menu-card logout-card">
+                    <div class="menu-icon">🚪</div>
+                    <h3>Logout</h3>
+                    <p>Securely end your session</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="store.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

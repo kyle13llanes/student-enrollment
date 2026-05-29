@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student - Student Enrollment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Student Enrollment System</h1>
+            <div class="user-info">
+                <span>Welcome, <span id="user-name-display">User</span>!</span>
+                <button type="button" id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>Add New Student</h2>
+            <a href="{{ url_for('dashboard_page') }}" class="btn btn-secondary">← Back to Dashboard</a>
+        </div>
+
+        <div id="error-msg" class="alert alert-error" style="display:none;"></div>
+        <div id="success-msg" class="alert alert-success" style="display:none;"></div>
+
+        <section class="card add-student-section">
+            <form id="addStudentForm" class="form form-large">
+                <div class="form-group">
+                    <label for="student_id">Student ID</label>
+                    <input type="text" id="student_id" name="student_id" required placeholder="e.g. 2023-0001" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select a course...</option>
+                        <option value="BSIT">Bachelor of Science in Information Technology (BSIT)</option>
+                        <option value="BSBA">Bachelor of Science in Business Administration (BSBA)</option>
+                        <option value="BSHM">Bachelor of Science in Hospitality Management (BSHM)</option>
+                        <option value="BSTM">Bachelor of Science in Tourism Management (BSTM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year_level">Year Level</label>
+                    <select id="year_level" name="year_level" required>
+                        <option value="">Select year level...</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="student@example.com">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large mt-20">Save Student Record</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='api.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
